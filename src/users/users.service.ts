@@ -60,9 +60,8 @@ export class UsersService {
 
     async updateStatus(id: string, status: boolean) {
         const user = await this.findUserById(id);
-        console.log(status)
-        const res = await user.updateOne({ isEnabled: status });
-        return res;
+        const result = await user.updateOne({ isEnabled: status });
+        return result;
     }
 
     async delete(id: string) {
